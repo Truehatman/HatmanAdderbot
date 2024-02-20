@@ -43,8 +43,17 @@ with app:
         # Ottieni l'ID del gruppo selezionato
         export_group_id = user_groups[selected_group_num - 1][1]
 
-        # Ottenere l'ID del gruppo in cui aggiungere i membri
-        import_group_id = input("Inserisci l'ID del gruppo in cui aggiungere i membri: ")
+       print("Lista dei gruppi:")
+    for num, group_id, group_title in user_groups:
+        print(f"{num}.{group_title}")
+
+    # Chiedi all'utente di scegliere il numero del gruppo da cui esportare
+    selected_group_num = int(input("Inserisci il numero del gruppo da cui esportare i membri: "))
+    
+    # Verifica se il numero scelto è valido
+    if 1 <= selected_group_num <= len(user_groups):
+        # Ottieni l'ID del gruppo selezionato
+        import_group_id = user_groups[selected_group_num - 1][1]
 
         # Ottenere la lista dei membri del gruppo di esportazione
         export_group_members = get_group_members(app, export_group_id)
