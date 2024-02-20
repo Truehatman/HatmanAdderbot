@@ -48,8 +48,8 @@ with app:
     for num, group_id, group_title in user_groups:
         print(f"{num}.{group_title}")
 
-    # Chiedi all'utente di scegliere il numero del gruppo da cui esportare
-    selected_group_num = int(input("Inserisci il numero del gruppo da cui esportare i membri: "))
+    # Chiedi all'utente di scegliere il numero del gruppo in cui importare
+    selected_group_num = int(input("Inserisci il numero del gruppo in cui importare i membri: "))
     
     # Verifica se il numero scelto è valido
     if 1 <= selected_group_num <= len(user_groups):
