@@ -18,8 +18,14 @@ def get_group_members(client, chat_id):
 
 # Funzione per aggiungere un membro con ritardo
 def add_member_with_delay(client, chat_id, member, delay=60):
-    time.sleep(delay)
-    client.add_chat_members(chat_id, member)
+    try:
+        time.sleep(delay)
+        client.add_chat_members(chat_id, member)
+        print(f"Utente {member} aggiunto con successo al gruppo.")
+        return True
+    except Exception as e:
+        print(f"Errore durante l'aggiunta dell'utente {member}: {e}")
+        return False
 
 # Funzione per aggiungere i membri ad un gruppo con ritardo
 def add_members_to_group_with_delay(client, chat_id, members, delay=60):
