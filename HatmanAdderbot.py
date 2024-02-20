@@ -43,7 +43,8 @@ with app:
         # Ottieni l'ID del gruppo selezionato
         export_group_id = user_groups[selected_group_num - 1][1]
 
-       print("Lista dei gruppi:")
+       
+    print("Lista dei gruppi:")
     for num, group_id, group_title in user_groups:
         print(f"{num}.{group_title}")
 
