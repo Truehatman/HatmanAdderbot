@@ -25,9 +25,9 @@ def is_member_in_group(client, chat_id, user_id):
         return False
 
 # Funzione per aggiungere un membro con ritardo
-def add_member_with_delay(client, chat_id, member, delay=60):
+def add_member_with_delay(client, chat_id, member, delay=100, delayy=20):
     try:
-        
+        time.sleep(delayy)
         
         # Verifica se l'utente è già nel gruppo
         if not is_member_in_group(client, chat_id, member.id):
