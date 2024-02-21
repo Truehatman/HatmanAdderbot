@@ -43,7 +43,7 @@ def add_member_with_delay(client, chat_id, member, delay=60):
         return False
 
 # Funzione per aggiungere i membri ad un gruppo con ritardo
-def add_members_to_group_with_delay(client, chat_id, members, delay=100):
+def add_members_to_group_with_delay(client, chat_id, members, delay=150):
     for member in members:
         if not member.is_bot and member.username and member.username.lower() != 'anonymous':
             # Verifica se l'utente non è un bot e ha un username
